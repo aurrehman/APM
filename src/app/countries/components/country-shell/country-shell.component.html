@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-body">
+        <region-list [dataset]="regions$ | async"
+                     [label]="'Region'"
+                     (selectedValue)="onRegionSelectValue($event)">
+        </region-list>
+        <region-list [dataset]="countries$ | async"
+                     [label]="'Country'"
+                     (selectedValue)="onCountrySelectValue($event)">
+        </region-list>
+        <country-details [country]="selectedCountry$ | async">
+        </country-details>
+        <error-message [errorMessage]="errorMessage$ | async">
+
+        </error-message>
+    </div>
+</div>

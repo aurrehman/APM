@@ -1,0 +1,32 @@
+<div  *ngIf="country">
+  <div class="row">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Capital</th>
+            <th>Population</th>
+            <th>Currencies</th>
+            <th>Flag</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td >{{ country.name }}</td>
+            <td>{{ country.capital }}</td>
+            <td >{{ country.population }}</td>
+             <td>
+                  <table>
+                    <tr *ngFor="let currency of country.currencies;">
+                        <td>  {{ currency.code }} | {{ currency.name }} </td>
+                    </tr>
+                  </table>
+             </td>
+            <td><img width="100"    [src]="country.flag" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
